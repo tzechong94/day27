@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Title: <span data-th-text="${game.name}"></span></h2>
+    <img data-th-src="${game.image}" width="200" height="200"/> <br>
+    <p>Rating: <span data-th-text="${game.rating}"></span></p>
+
+    <table>
+        <form action="#" method="post" data-th-action="@{/game/save}">
+            <tr>
+                <td>Name: </td>
+                <td><input name="text"></td>
+            </tr>
+
+            <tr>
+                <td>Rating: </td>
+                <td><input name="rating" type="number" min="1" max="10"></td>
+            </tr>
+            <tr>
+                <td>Comments: </td>
+                <td><input name="comments" type="text"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Add Comment</button></td>
+            </tr>
+        </form>
+    </table>
+
+</body>
+</html>
